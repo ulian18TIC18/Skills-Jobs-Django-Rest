@@ -32,3 +32,8 @@ class SkillDetailView(APIView):
         skill = get_object_or_404(Skill, pk=pk)
         serializer = SkillSerializer(skill)
         return Response(serializer.data)
+    
+    def delete(self, request, pk):
+        skill = get_object_or_404(Skill, pk=pk)
+        skill.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
