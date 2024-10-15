@@ -8,3 +8,7 @@ Content-Type: application/json
 {
     "name": "Power Apps"
 }
+
+###
+
+GET http://localhost:8000/api/skills/1

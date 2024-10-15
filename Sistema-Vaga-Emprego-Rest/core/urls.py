@@ -6,6 +6,5 @@ from skills.views import SkillListView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/skills/", include('skills.urls'), name='skills'),
-   
+    path("api/skills/", include('skills.urls'), name='skills'),   
 ]

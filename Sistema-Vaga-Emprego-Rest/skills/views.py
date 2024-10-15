@@ -3,6 +3,8 @@ from rest_framework.response import Response
 
 from rest_framework import status
 
+from django.shortcuts import get_object_or_404
+
 from .models import Skill
 from .serializers import SkillSerializer
 
@@ -25,3 +27,8 @@ class SkillListView(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)        
        
+class SkillDetailView(APIView):
+    def get(self, request, pk):
+        skill = get_object_or_404(Skill, pk=pk)
+        serializer = SkillSerializer(skill)
+        return Response(serializer.data)
