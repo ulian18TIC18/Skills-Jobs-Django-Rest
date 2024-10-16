@@ -1,10 +1,8 @@
-from django.urls import path
-
-from .views import SkillListView, SkillDetailView
+from rest_framework import routers
+from skills.views import SkillViewSet
 
 app_name = 'skills'
+router = routers.SimpleRouter()
+router.register(r"", SkillViewSet, basename="skill")
 
-urlpatterns = [
-    path('', SkillListView.as_view(), name='skill-list'),
-    path('<int:pk>/', SkillDetailView.as_view(), name='skill-details'),
-]
+urlpatterns = router.urls
