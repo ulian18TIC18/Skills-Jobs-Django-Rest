@@ -1,0 +1,33 @@
+GET http://localhost:8000/api/jobs/
+
+###
+
+POST http://localhost:8000/api/jobs/
+Content-Type: application/json
+
+{
+    "title": "Desenvolvedor Python Junior",
+    "description": "Requisitos da vaga",
+    "salary": 13000,
+    "skills": [1, 3]
+}
+
+###
+
+GET http://localhost:8000/api/jobs/2/
+
+###
+
+PUT http://localhost:8000/api/jobs/2/
+Content-Type: application/json
+
+{
+    "title": "Desenvolvedor Java Pleno",
+    "description": "Descrição dessa vaga",
+    "salary": 8000,
+    "skills": [2, 3]
+}
+
+###
+
+DELETE http://localhost:8000/api/jobs/1/
